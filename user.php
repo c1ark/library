@@ -10,6 +10,7 @@
 <form action="adduser.php" method = "post">
   First name:<input type="text" name="forename"><br>
   Last name:<input type="text" name="surname"><br>
+  Password:<input type="text" name="password"><br>
   <!--Creates a drop down list-->
   Gender:<select name="gender">
 		<option value="M">Male</option>

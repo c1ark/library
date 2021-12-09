@@ -6,8 +6,19 @@
 
 <select name = "User">
 <?php
+session_start(); 
+<?php
+session_start(); 
+if (!isset($_SESSION['name']))
+{   
+    header("Location:login.php");
+}
+?>
+
+
+
 include_once('connection.php');
-$stmt = $conn->prepare("SELECT * FROM TblUsers WHERE Role = 0 ORDER BY Surname ASC");
+$stmt = $conn->prepare("SELECT * FROM TblBook WHERE Role = 0 ORDER BY Bookname ASC");
 $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
