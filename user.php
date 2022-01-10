@@ -17,7 +17,7 @@
 		<option value="F">Female</option>
 	</select>
   <br>
-  <!--Next 3 lines create a radio button which we can use to select the user role-->
+  <!--Next 2 lines create a radio button which we can use to select the user role-->
   <input type="radio" name="role" value="User" checked> Pupil<br>
   <input type="radio" name="role" value="Librarian"> Librarian<br>
   <input type="submit" value="Add User">
@@ -34,6 +34,7 @@ $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
 echo("<br>".$row["Forename"].' '.$row["Surname"]);
+#echo($_SESSION['name']);
 }
 ?>
 

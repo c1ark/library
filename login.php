@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   
@@ -6,6 +6,8 @@
   
 </head>
 <body>
+
+Welcome to the library system - Please login <Br>
 
 <form action="loginprocess.php" method= "POST">
  User name:<input type="text" name="Username"><br>

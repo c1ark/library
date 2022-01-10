@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<form action="addbooktouser.php" method="post">
+<form action="returnbook.php" method="post">
 
 <select name = "User">
 <?php       
@@ -17,7 +17,7 @@ if (!isset($_SESSION['name']))
 
 
 include_once('connection.php');
-$stmt = $conn->prepare("SELECT * FROM TblBook ORDER BY Bookname ASC");
+$stmt = $conn->prepare("SELECT * FROM TblBookUser ORDER BY Bookname ASC");
 $stmt->execute();
 {echo($row);}
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -26,7 +26,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 }
 ?> 
 
-<input type="submit" value="Add Book">
+<input type="submit" value="Return Book">
 </form>
 </select>
 

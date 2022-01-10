@@ -18,10 +18,11 @@ try	{
 	echo $_POST["gender"]."<br>";
 	echo $role."<br>";
 
-	$stmt = $conn->prepare("INSERT INTO TblUser (UserID,Forename,Surname,Gender,role)VALUES (null,:forename,:surname,:gender,:role)");
+	$stmt = $conn->prepare("INSERT INTO TblUser (UserID,Forename,Surname,Password,Gender,role)VALUES (null,:forename,:surname,:password,:gender,:role)");
 
 	$stmt->bindParam(':forename', $_POST["forename"]);
 	$stmt->bindParam(':surname', $_POST["surname"]);
+	$stmt->bindParam(':password',$_POST["password"]);
 	$stmt->bindParam(':gender', $_POST["gender"]);
 	$stmt->bindParam(':role', $role);
 	$stmt->execute();
@@ -32,5 +33,5 @@ catch(PDOException $e)
 	}
 
 $conn=null;
-
+header('Location:user.php');
 ?>
